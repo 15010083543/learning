@@ -1,6 +1,6 @@
 /**
  * @author LiuPeng
- * @description 选择排序：其中的一个元素和所以元素比较
+ * @description 选择排序：其中的一个元素和所有元素比较
  * @date 2018/5/31
  */
 public class SelectionSort {

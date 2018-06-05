@@ -7,8 +7,8 @@ public class Queue {
 
    private int maxSize;
    private int[] queue;
-   private int front;
-   private int rear;
+   private int front; // 头元素
+   private int rear; // 步数
 
    public Queue(int size){
         maxSize = size;
