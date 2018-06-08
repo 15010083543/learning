@@ -2,7 +2,7 @@ package com.other;
 
 /**
  * @author LiuPeng
- * @description 递归三角数
+ * @description 递归三角数 1,3,6,10,15...
  * 递归的特征
  * 1.调用自身
  * 2.调用自身的时候是为了解决更小的问题
