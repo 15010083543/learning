@@ -45,9 +45,8 @@ public class LinkedList {
         while (link.age != age){
             if (link.next == null) {
                 return null;
-            } else {
-                link = link.next;
             }
+            link = link.next;
         }
         return link;
     }
