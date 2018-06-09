@@ -1,3 +1,5 @@
+package com.sort;
+
 /**
  * @author LiuPeng
  * @description 插入排序：数组的局部元素是有顺序的

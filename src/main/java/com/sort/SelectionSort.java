@@ -1,3 +1,5 @@
+package com.sort;
+
 /**
  * @author LiuPeng
  * @description 选择排序：其中的一个元素和所有元素比较
