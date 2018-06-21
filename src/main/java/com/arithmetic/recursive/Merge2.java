@@ -1,4 +1,4 @@
-package com.recursive;
+package com.arithmetic.recursive;
 
 /**
  * @author LiuPeng
@@ -59,7 +59,7 @@ public class Merge2 {
     public static void merg(int[] array, int low, int highPtr, int up) {
         System.out.println("归并：highPtr:" + highPtr + ",low:" + low + ",up:" + up);
         int j = 0;
-        int lowerBound = low;
+        int lowerBound = low; // 记录数组下标
         int mid = highPtr - 1;
         int n = up - lowerBound + 1;
         while (low <= mid && highPtr <= up) {

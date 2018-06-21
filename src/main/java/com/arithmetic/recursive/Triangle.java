@@ -1,4 +1,4 @@
-package com.recursive;
+package com.arithmetic.recursive;
 
 /**
  * @author LiuPeng
