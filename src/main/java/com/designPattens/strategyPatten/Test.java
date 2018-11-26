@@ -16,13 +16,5 @@ public class Test {
         PriceUse priceUse2 = new PriceUse(new UnMemberStrategy());
         System.out.println(priceUse2.opreationPrice(price));
 
-
-        /*Price price = new Price(300);
-
-        PriceStrategy strategy = new MemberStrategy();
-        System.out.println(strategy.PriceStrategy());
-
-        PriceStrategy strategy2 = new UnMemberStrategy();
-        System.out.println(strategy2.PriceStrategy());*/
     }
 }
