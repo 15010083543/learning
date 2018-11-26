@@ -19,6 +19,8 @@ public class Child extends Parent{
     public static void main(String[] args) {
         //System.out.println("test init");
         System.out.println(Child.num);
+        System.out.println((1-1)/0 +1);
+        System.out.println(Math.ceil(-1.01));
     }
 
 }
