@@ -4,6 +4,8 @@ package com.arithmetic2.sort;
  * @author LiuPeng
  * @description 插入排序 从第二个元素开始和第一个元素比，然后第三个元素和前两个比，然后依次进行并排序
  * 思想是先把前面的一部分元素排好序，再把新元素插入到适合位置,就不需要全部都排序了
+ *
+ * 插入排序在对几乎已经排好序的数据操作时，效率高，即可以达到线性排序的效率
  * @date 2018/12/7
  */
 public class InsertSort {
