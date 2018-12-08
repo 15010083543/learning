@@ -24,9 +24,11 @@ public class InsertSort {
 */
         // 优化版本：给要比的值做一个副本，不是直接交换,只是处理与其对比值的位置，最后找到合适的位置才给对比的值赋值
         int[] array = Comment.genric(10, 0, 10);
+        // 从第二个元素开始比较
         for (int i = 1; i < array.length; i++) {
             int tmp = array[i];
             int j = 0;
+            // 找到应该插入的位置
             for ( j = i; j > 0 && array[j-1] > tmp; j--) { // 注意j的取值，只有在交换的时候j的值才会发生变化
                     array[j] = array[j-1];
             }

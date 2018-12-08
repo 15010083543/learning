@@ -1,4 +1,4 @@
-package com.arithmetic.sort;
+package com.arithmetic2.sort;
 
 /**
  * @author LiuPeng
