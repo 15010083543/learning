@@ -1,6 +1,9 @@
 import com.arithmetic2.sort.Comment;
 import org.junit.Test;
 
+import java.util.Arrays;
+
+
 /**
  * @author LiuPeng
  * @description 排序测试
@@ -9,8 +12,34 @@ import org.junit.Test;
 public class TestSort {
 
     @Test
-    public void testInsert1() {
-        //System.out.println(n*logn);
+    public void testMerge() {
+        int[] arr = Comment.genric(10, 0, 10);
+        sort(arr, 0, arr.length-1);
+        Comment.print(arr);
+    }
+
+    private void sort(int[] arr, int left, int right) {
+        if (left >= right) return;
+        int mid = (left + right) >>> 1;
+        sort(arr, left, mid);
+        sort(arr, mid + 1, right);
+        merg(arr, left, mid, right);
+    }
+
+    private void merg(int[] arr, int left, int mid, int right) {
+        int[] copyArray = Arrays.copyOfRange(arr, left, right +1 );
+        int l = left, r = mid + 1;
+        for (int k = left; k < right + 1; k++) {
+            if (l > mid) {
+                arr[k] = copyArray[r-left]; r++;
+            } else if (r > right) {
+                arr[k] = copyArray[l-left]; l++;
+            } else if (copyArray[l-left] > copyArray[r-left]) {
+                arr[k] = copyArray[r-left]; r++;
+            } else {
+                arr[k] = copyArray[l-left]; l++;
+            }
+        }
     }
 
 

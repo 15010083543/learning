@@ -14,7 +14,7 @@ public class MergeSort {
         Comment.print(arr);
         int[] arr1 = Arrays.copyOfRange(arr, 0, arr.length);
         int[] arr2 = Arrays.copyOfRange(arr, 0, arr.length);
-        sort(arr1, 0, arr.length - 1); // 自上而下的方式
+        sort(arr1, 0, arr.length - 1); // 自上而下的方式(元素下标)
         Comment.print(arr1);
         merg2(arr2, arr.length); // 自下而上的方式
         Comment.print(arr2);
@@ -33,11 +33,11 @@ public class MergeSort {
     // 自上而下的方式
     // 将arr[l...mid]和arr[mid+1...r]两部分进行归并
     public static void merg(int[] arr, int left, int mid, int right){
-        System.out.println("-----------------------");
+        System.out.println("left="+left+",mid="+mid+",right="+right);
         // 复制数组
-        int[] aux = Arrays.copyOfRange(arr, left, right + 1);
+        int[] aux = Arrays.copyOfRange(arr, left, right + 1); // 这里操作的都是拷贝到新数组的元素，利用新数组给原来的数组赋值
         // 初始化，i指向左半部分的起始索引位置l；j指向右半部分起始索引位置mid+1
-        int i = left, j = mid + 1;
+        int i = left, j = mid + 1; // 定义了两个坐标
         for (int k = left; k < right + 1; k++) {
             if ( i > mid){// 如果左半部分元素已经全部处理完毕
                 arr[k] = aux[j-left]; j++;
@@ -50,6 +50,25 @@ public class MergeSort {
             }
         }
     }
+
+   /*
+    left=0,mid=0,right=1
+            -----------------------
+    left=2,mid=2,right=3
+            -----------------------
+    left=4,mid=4,right=5
+            -----------------------
+    left=6,mid=6,right=7
+            -----------------------
+    left=8,mid=8,right=9
+            -----------------------
+    left=0,mid=1,right=3
+            -----------------------
+    left=4,mid=5,right=7
+            -----------------------
+    left=0,mid=3,right=7
+            -----------------------
+    left=0,mid=7,right=9*/
 
 
     // 自下而上的方式
