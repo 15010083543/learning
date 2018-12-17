@@ -63,9 +63,11 @@ public class ShellSort {
                 for (int j = i + h; j < arr.length; j=j+h) { // 确定每个子列的最后一个元素
                     System.out.println("第二层for");
                     int temp = arr[j];//要比较的第二个元素
+                    System.out.println("temp-="+temp);
                     int x;
                     for (x = j - h; x >= 0 && arr[x] > temp ; x= x-h) { // 确定每个子列的第一个元素，并且和第二个元素进行比较
                         System.out.println("第三层for=="+x);
+                        System.out.println("arr[x]="+arr[x]);
                         arr[x+h] = arr[x];
                         System.out.println("arr[x + h]" +arr[x + h]);
                         System.out.println("arr[x]" +arr[x]);

@@ -1,17 +1,20 @@
 package com.arithmetic2.sort;
 
+import com.arithmetic3.sort.Example;
+
 import java.util.Arrays;
 
 /**
  * @author LiuPeng
  * @description 归并排序
+ * 思想：首先把一个数组分割成两个子数组，然后依次向下分割，到每个子数组只有两个元素，然后再比较这两个元素，
+ *      比较完之后再向上一级，比较这四个元素的大小，然后依次向上比较即可。用到递归的思想
  * @date 2018/12/10
  */
-public class MergeSort {
+public class MergeSort{
 
     public static void main(String[] args) {
         int[] arr = Comment.genric(10, 0, 10);
-        Comment.print(arr);
         int[] arr1 = Arrays.copyOfRange(arr, 0, arr.length);
         int[] arr2 = Arrays.copyOfRange(arr, 0, arr.length);
         sort(arr1, 0, arr.length - 1); // 自上而下的方式(元素下标)
@@ -86,4 +89,5 @@ public class MergeSort {
         }
         return count2;
     }
+
 }
