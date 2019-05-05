@@ -41,6 +41,18 @@
       <version>3.8.1</version>
     </dependency>
 
+    <!-- 熔断框架 -->
+    <dependency>
+      <groupId>com.netflix.hystrix</groupId>
+      <artifactId>hystrix-core</artifactId>
+      <version>1.5.9</version>
+    </dependency>
+    <!--ehcache-->
+    <dependency>
+      <groupId>org.ehcache</groupId>
+      <artifactId>ehcache</artifactId>
+      <version>3.7.0</version>
+    </dependency>
 
   </dependencies>
 
