@@ -23,4 +23,27 @@ public class TestBase {
         System.out.println(s);
         Comparable[] a = {1,5,7};
     }
+
+    public volatile int inc = 0;
+
+    public void increase() {
+        inc++;
+    }
+
+    @Test
+    public void testvolatile() {
+        for(int i=0;i<10;i++){
+            new Thread(){
+                public void run() {
+                    for(int j=0;j<1000;j++)
+                        increase();
+                };
+            }.start();
+        }
+        System.out.println(inc);
+
+        while(Thread.activeCount()>1)  //保证前面的线程都执行完
+            Thread.yield();
+        System.out.println(inc);
+    }
 }

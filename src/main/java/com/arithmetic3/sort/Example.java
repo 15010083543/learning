@@ -9,8 +9,8 @@ import java.util.Arrays;
  */
 public class Example {
 
-    public static void show(Comparable[] arr) {
+   /* public static void show(Comparable[] arr) {
         Arrays.asList(arr).stream().forEach(i -> System.out.println(i));
         System.out.println();
-    }
+    }*/
 }

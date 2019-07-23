@@ -9,6 +9,8 @@ import java.util.Random;
  */
 public class FuseCommand extends HystrixCommand<String> {
 
+    private int count = 10;
+
     public FuseCommand(String name) {
         super(HystrixCommand.Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey("ThreadPoolTestGroup"))// groupKey 表示所属的group，一个group共用线程池
                         .andCommandKey(HystrixCommandKey.Factory.asKey("testCommandKey")) //CommandKey 当前执行方法名

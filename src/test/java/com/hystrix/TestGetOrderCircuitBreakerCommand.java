@@ -26,18 +26,23 @@ public class TestGetOrderCircuitBreakerCommand {
 
     @Test
     public void testHystrixXianLiu() {
-        for (int i = 0; i < 25; ++i) {
-            HystrixCommand<String> command = new LimitingCommand("-1");
+        for (int i = 0; i < 21; ++i) {
+           /* HystrixCommand<String> command = new LimitingCommand("-1");
             String result = command.execute();
             System.out.println("call times:"+(i+1)+"   result:"+result +" isCircuitBreakerOpen: "+command.isResponseRejected());
-
-            HystrixCommand<String> command2 = new LimitingCommand("-2");
-            String result2 = command2.execute();
-            System.out.println("call times:"+(i+1)+"   result:"+result2 +" isCircuitBreakerOpen: "+command2.isResponseRejected());
+*/
+           /*HystrixCommand<String> command2 = new LimitingCommand("-2");
+            String result2 = command2.execute();*/
+            final int x = i;
+            new Thread(() -> {
+                HystrixCommand<String> command2 = new LimitingCommand("-2");
+                String result2 = command2.execute();
+                 System.out.println("call times:"+(x+1)+"   result:"+result2 +" isCircuitBreakerOpen: "+command2.isResponseRejected());
+            }).start();
         }
         // 防止主线程提前结束执行
         try {
-            Thread.sleep(50);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
