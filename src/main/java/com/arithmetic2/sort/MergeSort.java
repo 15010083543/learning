@@ -1,7 +1,5 @@
 package com.arithmetic2.sort;
 
-import com.arithmetic3.sort.Example;
-
 import java.util.Arrays;
 
 /**
