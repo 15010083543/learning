@@ -19,5 +19,7 @@ public class BaseTestTreeNode {
         right.rightNode = right2;
         System.out.println("--------------拼装树结构---------------");
 
+        TreeNode.frontCircle(root);
+
     }
 }
