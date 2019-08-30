@@ -25,8 +25,7 @@ public class LinkIsCircle {
     }
 
     /*1.快慢指针
-    参考资料点这里。 
-
+    参考资料点这里。
     用两个指针指向链表头，每次循环，快指针往前两步，慢指针往前一步；在循环过程中，如果快指针等于慢指针（相遇），则表示链表有环；否则不存在环。代码如下：*/
     public static boolean findBeginLoop2(BaseLinked head) {
         if (null == head || null == head.next)

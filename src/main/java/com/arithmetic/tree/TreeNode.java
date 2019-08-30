@@ -1,8 +1,9 @@
 package com.arithmetic.tree;
 
-import lombok.Data;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+
 // 树节点的基本结构
-@Data
 public class TreeNode {
 
     private int value;
@@ -11,6 +12,33 @@ public class TreeNode {
 
     public TreeNode(int value) {
         this.value = value;
+    }
+
+    // 添加节点
+    public static void addTreeNode(TreeNode treeNode, TreeNode addNode) throws Exception{
+        if (null == treeNode) {
+            treeNode.value = addNode.value;
+            return ;
+        }
+        BlockingQueue queue = new LinkedBlockingQueue();
+        queue.add(treeNode);
+        while (true){
+            treeNode = (TreeNode)queue.take();
+            // 利用队列的思想添加节点
+            if(treeNode.leftNode == null){
+                treeNode.leftNode = addNode;
+                return;
+            } else {
+                queue.add(treeNode.leftNode);
+            }
+
+            if(treeNode.rightNode == null){
+                treeNode.rightNode = addNode;
+                return ;
+            } else {
+                queue.add(treeNode.rightNode);
+            }
+        }
     }
 
     // 前序遍历
