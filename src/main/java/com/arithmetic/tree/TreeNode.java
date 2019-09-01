@@ -63,4 +63,17 @@ public class TreeNode {
     public void lastCircle(TreeNode treeNode){
 
     }
+
+    // 前序查找
+    // 先根节点，然后左节点，右节点
+    public static void findFrontCircle(TreeNode treeNode){
+        System.out.println(treeNode.value);
+        if (null != treeNode.leftNode) {
+            frontCircle(treeNode.leftNode);
+        }
+        if (null != treeNode.rightNode) {
+            frontCircle(treeNode.rightNode);
+        }
+
+    }
 }

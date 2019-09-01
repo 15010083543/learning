@@ -44,6 +44,7 @@ public class TestSave {
                 break;
             default:
                 System.out.println("0");
+                curlevel = 0; // 恢复默认级别
                 break;
         }
     }
