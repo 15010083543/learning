@@ -1,5 +1,6 @@
 package com.makeId;
 
+import com.base.encode.IdGen;
 import org.junit.Test;
 
 import java.util.ArrayList;

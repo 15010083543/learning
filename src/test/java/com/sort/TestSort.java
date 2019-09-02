@@ -1,6 +1,6 @@
 package com.sort;
 
-import com.arithmetic2.sort.Comment;
+import com.arithmetic.sort.Comment;
 import org.junit.Test;
 
 import java.util.Arrays;

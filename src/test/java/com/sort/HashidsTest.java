@@ -4,11 +4,10 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
-import com.encode.Hashids;
+import com.base.encode.Hashids;
 import com.util.NumericConvertUtil;
 import org.junit.Test;
 import junit.framework.Assert;
-import org.springframework.util.NumberUtils;
 
 public class HashidsTest {
     @Test
