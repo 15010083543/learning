@@ -9,6 +9,6 @@ public class FangBen implements IFangBen{
 
     @Override
     public void checkFang() {
-            System.out.println("房本校验");
+        System.out.println("房本校验");
     }
 }
