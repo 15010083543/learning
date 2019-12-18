@@ -1,5 +1,6 @@
 package com.arithmetic.link;
 
+import com.alibaba.fastjson.JSONObject;
 import com.arithmetic.sort.InsertSort;
 import lombok.Data;
 
@@ -64,11 +65,42 @@ public class BaseLinked {
         return newNode;
     }
 
+    /*
+     *@description 链表删除节点
+     *@param baseLinked 原始链表
+     *@param num 新节点
+     *@return void
+     */
+    public static BaseLinked deleteNode(BaseLinked baseLinked, int num) {
+        if (null == baseLinked) {
+            return null;
+        }
+        // 删除头节点
+        if (baseLinked.getNum() == num) {
+            return baseLinked.getNext();
+        }
+        BaseLinked flag= baseLinked;
+        // 删除普通节点
+        while (null !=flag.getNext()) {
+            if (flag.getNext().getNum() == num){
+                flag.setNext(flag.getNext().getNext());
+                break;
+            } else {
+                flag = flag.getNext();
+            }
+        }
+        return baseLinked;
+    }
+
     public static void main(String[] args) {
         BaseLinked baseLinked = new BaseLinked(1);
         insertLastLinked(baseLinked, 2);
         BaseLinked baseLinked1 = insertLastLinked(baseLinked, 3);
         BaseLinked insertFirst = insertFirstLinked(baseLinked1, 0);
-        System.out.println(baseLinked1);
+        System.out.println((insertFirst));
+        BaseLinked baseLinked3 = deleteNode(insertFirst, 2);
+        System.out.println((baseLinked3));
+        BaseLinked baseLinked2 = deleteNode(insertFirst, 0);
+        System.out.println((baseLinked2));
     }
 }
