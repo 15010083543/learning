@@ -1,5 +1,6 @@
 package com.base;
 
+import org.apache.commons.lang3.math.NumberUtils;
 import org.junit.Test;
 
 import java.sql.SQLOutput;
@@ -14,20 +15,30 @@ public class TestMap {
 
     @Test
     public void Test(){
-        Map<String, Integer> map = new HashMap<>();
-        map.put("1a", 1);
-        map.put("2", 2);
-        map.put("3", 3);
-        map.put("7", 7);
-        map.put("4a", 4);
-        map.put("6", 6);
-        map.put("21", 2);
-        map.put("31", 3);
-        map.put("71", 7);
-        map.put("4a1", 4);
-        map.put("61", 6);
-        map.put("5a", 5);
-        map.get("6a");
+        Calendar c = Calendar.getInstance();
+        System.out.println(c.get(Calendar.SECOND));
+        System.out.println(new Date().getSeconds());
+      /*  Map<Integer, String> map = new HashMap<>(10);
+        map.put(7, "2");
+        map.put(11, "3");
+        map.put(43, "1");
+        map.put(59, "1");
+        map.put(19, "");
+        map.put(3, "");
+        map.put(352, "");
+        map.put(592, "2");
+        map.put(192, "");
+        map.put(322, "");
+        map.put(35, "");
+        map.put(591, "2");
+        map.put(191, "");
+        map.put(31, "");
+        map.put(351, "");
+        map.get(19);
+        map.get(3);
+        for (HashMap.Entry key : map.entrySet()) {
+            System.out.println(key.getKey() + " -> " + key.getValue());
+        }*/
         /*System.out.println(1);
         Set<String> strings = map.keySet();
         strings.stream().forEach(x -> System.out.println(x + ":" + map.get(x)));*/

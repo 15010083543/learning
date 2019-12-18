@@ -19,7 +19,7 @@ public class TestRetryce {
             System.out.println("i=" + i);
             System.out.println("-------+++++--------");
             int j = 0;
-           //retry:   //②
+           // retry:   //②
             for (; ; ) {
                 j++;
                 System.out.println("j=" + j);
