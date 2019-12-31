@@ -7,18 +7,18 @@ package com.arithmetic.link;
  */
 public class PlusOne {
     public static void main(String[] args) {
-        BaseLinked baseLinked1 = new BaseLinked(9);
-        BaseLinked baseLinked2 = new BaseLinked(9);
-        BaseLinked baseLinked3 = new BaseLinked(9);
-        BaseLinked baseLinked4 = new BaseLinked(9);
+        LinkedNode linkedNode1 = new LinkedNode(9);
+        LinkedNode linkedNode2 = new LinkedNode(9);
+        LinkedNode linkedNode3 = new LinkedNode(9);
+        LinkedNode linkedNode4 = new LinkedNode(9);
 
-        baseLinked1.next = baseLinked2;
-        baseLinked2.next = baseLinked3;
-        //baseLinked3.next = baseLinked4;
+        linkedNode1.next = linkedNode2;
+        linkedNode2.next = linkedNode3;
+        //linkedNode3.next = linkedNode4;
 
-        //BaseLinked re1 = ReverseLinked.recursionReverseLinked(baseLinked1);
+        //LinkedNode re1 = ReverseLinked.recursionReverseLinked(linkedNode1);
         //System.out.println(re1);
-        BaseLinked re2 = recursionPlusOne(baseLinked1);
+        LinkedNode re2 = recursionPlusOne(linkedNode1);
         System.out.println(re2);
     }
 
@@ -30,20 +30,20 @@ public class PlusOne {
      首先找到链表最后一个不为9的元素, 如果没有, 说明链表元素都为9, 在表头添加新节点(值为1), 后续所有节点值都赋值为1;如果找到, 当前节点值加1, 后续所有节点值同样赋值为0。
 
      Java代码*/
-    public static BaseLinked recursionPlusOne(BaseLinked head) {
+    public static LinkedNode recursionPlusOne(LinkedNode head) {
         if (head == null) {
             return null;
         }
         int carry = getCarrier(head);
         if (carry == 1) { // 首位是否加一
-            BaseLinked root = new BaseLinked(carry);
+            LinkedNode root = new LinkedNode(carry);
             root.next = head;
             return root;
         }
         return head;
     }
 
-    public static int getCarrier(BaseLinked node) {
+    public static int getCarrier(LinkedNode node) {
         if (node == null) {
             return 1; // 加一
         }
