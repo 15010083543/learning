@@ -73,6 +73,28 @@ public class IntReverseEasy {
             return -1;
         }
     }
+
+    public static int strStr2(String haystack, String needle) {
+        char[] chars = haystack.toCharArray();
+        char[] chars1 = needle.toCharArray();
+        int count = 0;
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] == chars1[0]) {
+                boolean falg = true;
+                for (int j = 1; j < chars1.length; j++) {
+                    if (chars[i + j] != chars1[j]) {
+                        falg = false;
+                        break;
+                    }
+                }
+                if (falg) {
+                    return i;
+                }
+            }
+        }
+        return count;
+    }
+
    /* 我写的失败代码，不能通过测试
    public static int strStr(String haystack, String needle) {
         if (needle.length() == 0)

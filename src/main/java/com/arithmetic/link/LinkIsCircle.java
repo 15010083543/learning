@@ -18,7 +18,7 @@ public class LinkIsCircle {
         linkedNode3.next = linkedNode4;
         linkedNode4.next = linkedNode2;
 
-        boolean flag = findBeginLoop(linkedNode1);
+        boolean flag = findBeginLoop2(linkedNode1);
         System.out.println(flag);
     }
 
@@ -66,7 +66,4 @@ public class LinkIsCircle {
        }
        return false;
    }
-
-
-
 }

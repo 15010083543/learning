@@ -2,6 +2,8 @@ package com.arithmetic.link;
 
 import com.arithmetic.LinkedList;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * @author LiuPeng
  * @description 链表算法学习
@@ -10,6 +12,7 @@ import com.arithmetic.LinkedList;
 public class TestLinked {
 
     public static void main(String[] args) {
+
         LinkedNode linkedNode1 = new LinkedNode(1);
         LinkedNode linkedNode2 = new LinkedNode(2);
         LinkedNode linkedNode3 = new LinkedNode(3);
@@ -28,13 +31,48 @@ public class TestLinked {
 
     }
 
+    private LinkedNode revers(LinkedNode linkedNode1) {
+
+
+        return null;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /*
      *@description 单向链表反转
      *@param linkedNode
      *@return com.arithmetic.link.LinkedNode
      * 头插法，每循环一次给头节点插入一个节点
      */
-    public static LinkedNode reverseLinked(LinkedNode linkedNode){
+    public static LinkedNode reverseLinked(LinkedNode linkedNode) {
         LinkedNode lastNode = null;
         if (null != linkedNode) {
             LinkedNode cur = linkedNode;
@@ -54,22 +92,25 @@ public class TestLinked {
 
     // 利用递归的思想做反转链表
     // 递归是有边界
-    public static LinkedNode recursionReverseLinked(LinkedNode linkedNode){
+    public static LinkedNode recursionReverseLinked(LinkedNode linkedNode) {
         if (null == linkedNode || null == linkedNode.getNext()) return linkedNode;
         LinkedNode cur = recursionReverseLinked(linkedNode.getNext());
         linkedNode.next.next = linkedNode;
         linkedNode.next = null;
         return cur;
     }
+
     /**
      * @author LiuPeng
      * @description 找到两个单链表相交的起始节点。
      * 实现思想
-     *  把A和B两个链表的头结点赋值个pA，pB，依次循环，当循环完本链表之后进行交换，直到找到相交节点或是结束
+     * 把A和B两个链表的头结点赋值个pA，pB，依次循环，当循环完本链表之后进行交换，直到找到相交节点或是结束
      * @date 2019/12/21
      */
-    public static LinkedNode getIntersectionNode(LinkedNode headA, LinkedNode headB){
-        if (headA == null || headB == null) { return null; }
+    public static LinkedNode getIntersectionNode(LinkedNode headA, LinkedNode headB) {
+        if (headA == null || headB == null) {
+            return null;
+        }
         LinkedNode a = headA;
         LinkedNode b = headB;
         while (a != b) {

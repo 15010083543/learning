@@ -15,14 +15,35 @@ public class LRU {
         LinkedNode linkedNode2 = LinkedNode.insertFirstLinked(linkedNode1, 3);
         LinkedNode linkedNode3 = LinkedNode.insertFirstLinked(linkedNode2, 4);
         LinkedNode linkedNode4 = LinkedNode.insertFirstLinked(linkedNode3, 5);
-        int count = LinkedNode.getCount(linkedNode4);
         LinkedNode addNode = new LinkedNode(6);
+        /*int count = LinkedNode.getCount(linkedNode4);
         addNode.setNext(linkedNode4);
         System.out.println(addNode);
         if (++count > COUNTTOTAL) {
             deleteNode(addNode);
         }
-        System.out.println(addNode);
+        System.out.println(addNode);*/
+        System.out.println(LRUTest(linkedNode4, addNode));
+    }
+
+    public static LinkedNode LRUTest(LinkedNode linkedNode, LinkedNode select){
+        if (null == linkedNode) {
+            return select;
+        }
+        LinkedNode pre = select;
+        int count = 1;
+        select.next = linkedNode;
+        LinkedNode cur = select;
+        while (null != cur.next) {
+            cur = cur.next;
+            //pre = pre.next
+            ++count;
+            if (count == 3) {
+                cur.next = null;
+                break;
+            }
+        }
+        return cur;
     }
 
     /*
