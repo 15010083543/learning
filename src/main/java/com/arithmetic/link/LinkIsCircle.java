@@ -18,9 +18,45 @@ public class LinkIsCircle {
         linkedNode3.next = linkedNode4;
         linkedNode4.next = linkedNode2;
 
-        boolean flag = findBeginLoop2(linkedNode1);
+        /*boolean flag = findBeginLoop2(linkedNode1);
+        System.out.println(flag);
+*/
+        boolean flag = findCircleLoop(linkedNode1);
         System.out.println(flag);
     }
+
+    public static Boolean findCircleLoop(LinkedNode linkedNode){
+        Boolean flag = false;
+        LinkedNode fast = linkedNode;
+        LinkedNode slow = linkedNode;
+        LinkedNode cur = linkedNode;
+        while (null != slow){
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast.num == slow.num) {
+                return true;
+            }
+        }
+        return flag;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /*1.快慢指针
     参考资料点这里。
