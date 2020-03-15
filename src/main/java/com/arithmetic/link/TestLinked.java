@@ -1,9 +1,5 @@
 package com.arithmetic.link;
 
-import com.arithmetic.LinkedList;
-
-import java.util.concurrent.atomic.AtomicInteger;
-
 /**
  * @author LiuPeng
  * @description 链表算法学习
@@ -16,25 +12,39 @@ public class TestLinked {
         LinkedNode linkedNode1 = new LinkedNode(1);
         LinkedNode linkedNode2 = new LinkedNode(2);
         LinkedNode linkedNode3 = new LinkedNode(3);
-        LinkedNode linkedNode4 = new LinkedNode(6);
-        LinkedNode linkedNode5 = new LinkedNode(7);
+        LinkedNode linkedNode4 = new LinkedNode(4);
+        LinkedNode linkedNode5 = new LinkedNode(5);
         linkedNode1.next = linkedNode2;
         linkedNode2.next = linkedNode3;
         linkedNode3.next = linkedNode4;
         linkedNode4.next = linkedNode5;
 
-        LinkedNode linkedNode21 = new LinkedNode(5);
-        linkedNode21.next = linkedNode4;
+        //LinkedNode linkedNode21 = new LinkedNode(5);
+        //linkedNode21.next = linkedNode4;
 
         //getIntersectionNode(linkedNode1, linkedNode21);
-        System.out.println(recursionReverseLinked(linkedNode1));
+        //System.out.println(recursionReverseLinked(linkedNode1));
+        System.out.println(deleteNode(linkedNode1, 1));
 
     }
 
-    private LinkedNode revers(LinkedNode linkedNode1) {
 
-
-        return null;
+    //删除链表倒数第n个结点
+    public static LinkedNode deleteNode(LinkedNode linkedNode, int num) {
+        // 加入一个哑节点
+        LinkedNode pre = new LinkedNode(-1);
+        pre.next = linkedNode;
+        LinkedNode fast = pre;
+        LinkedNode slow = pre;
+        for (int i = 0; i <= num ; i++) {
+            fast = fast.next;
+        }
+        while (null != fast) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        slow.next = slow.next.next;
+        return pre.next;
     }
 
 
