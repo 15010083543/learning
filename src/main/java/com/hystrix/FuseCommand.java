@@ -28,7 +28,7 @@ public class FuseCommand extends HystrixCommand<String> {
                         .andThreadPoolPropertiesDefaults(
                                 HystrixThreadPoolProperties.Setter()
                                         .withMaxQueueSize(10)   //配置队列大小
-                                        .withCoreSize(2)    // 配置线程池里的线程数
+                                        .withCoreSize(2)// 配置线程池里的线程数
                         )
         );
     }
