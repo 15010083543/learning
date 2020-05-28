@@ -29,9 +29,9 @@ public class InsertSort {
         // 从第二个元素开始比较
         for (int i = 1; i < array.length; i++) {
             int tmp = array[i];
-            int j = 0;
+            int j = i;
             // 找到应该插入的位置
-            for ( j = i; j > 0 && array[j-1] > tmp; j--) { // 注意j的取值，只有在交换的时候j的值才会发生变化
+            for ( ; j > 0 && array[j-1] > tmp; j--) { // 注意j的取值，只有在交换的时候j的值才会发生变化
                     array[j] = array[j-1];
             }
             array[j] = tmp;

@@ -1,9 +1,7 @@
 package com.base;
 
-import org.apache.commons.lang3.math.NumberUtils;
 import org.junit.Test;
 
-import java.sql.SQLOutput;
 import java.util.*;
 
 /**
@@ -18,7 +16,7 @@ public class TestMap {
         Calendar c = Calendar.getInstance();
         System.out.println(c.get(Calendar.SECOND));
         System.out.println(new Date().getSeconds());
-      /*  Map<Integer, String> map = new HashMap<>(10);
+        Map<Integer, String> map = new Hashtable<>();//new HashMap<>(10);
         map.put(7, "2");
         map.put(11, "3");
         map.put(43, "1");
@@ -38,7 +36,7 @@ public class TestMap {
         map.get(3);
         for (HashMap.Entry key : map.entrySet()) {
             System.out.println(key.getKey() + " -> " + key.getValue());
-        }*/
+        }
         /*System.out.println(1);
         Set<String> strings = map.keySet();
         strings.stream().forEach(x -> System.out.println(x + ":" + map.get(x)));*/

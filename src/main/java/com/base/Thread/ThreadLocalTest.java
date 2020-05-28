@@ -1,10 +1,10 @@
-package com.base.Thread.threadLocal;
+package com.base.Thread;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class ThreadLocalDemo {
+public class ThreadLocalTest {
     public static void main(String[] args) throws InterruptedException {
         int threads = 3;
         CountDownLatch countDownLatch = new CountDownLatch(threads);

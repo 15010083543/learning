@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
  * @description 10个线程如何同时开启
  * @date 2019/8/26
  */
-public class TestConcurrent {
+public class TestCountDownLatch {
 
     public static void main(String[] args) throws InterruptedException {
         CountDownLatch countDownLatch = new CountDownLatch(10);
