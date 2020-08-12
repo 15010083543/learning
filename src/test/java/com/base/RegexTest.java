@@ -4,9 +4,6 @@ import com.util.RegexUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -20,45 +17,25 @@ public class RegexTest {
 
     @Test
     public  void mains() {
+      String url = "300_1000";
+      String result = revoseSuffix(url);
+        String url1 = "0_1000)%20AND%209970%3D1318%20AND%20(1372%3D1372}";
+        String result1 = revoseSuffix(url1);
+        String url2 = "300_*";
+        String result2 = revoseSuffix(url2);
+        String url3 = "300_300.12";
+        String result3 = revoseSuffix(url3);
+        String url4 = "300_aa";
+        String result4 = revoseSuffix(url4);
+    }
 
-        ScriptEngineManager sem = new ScriptEngineManager();
-        ScriptEngine engine = sem.getEngineByExtension("js");
-        //原始url
-        String url = "%25u597D";
-        //解码后url
-        String unUrl;
-        try {
-            unUrl = (String)engine.eval("unescape('"+url+"')");
-            System.out.println(unUrl);  //输出结果为:http://www.baidu .com%
-            String unUrl2 = (String)engine.eval("unescape('"+unUrl+"')");
-            System.out.println(unUrl2);
-        } catch (ScriptException e) {
-            e.printStackTrace();
-        }
-       /* String str = test;
-        try {
-            str= URLDecoder.decode(str,"UTF-8");
-            str= URLDecoder.decode(str,"UTF-8");
-            System.out.println(str);
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }*/
-        /*String tmp = "";
-        try {
-            tmp = URLDecoder.decode(str, "UTF-8");
-            String tmp1 = URLDecoder.decode(tmp, "UTF-8");
-            System.out.println("22");
-        } catch (Exception e) {
-            try {
-                tmp = tmp.replaceAll("%(?![0-9a-fA-F]{2})", "%25");
-                tmp = URLDecoder.decode(tmp, "utf-8");
-            } catch (UnsupportedEncodingException ex) {
-                System.out.println(ex);
-            }
-            System.out.println(e);
-            e.printStackTrace();
-        }*/
-
+    private String revoseSuffix(String seoPath){
+        String regex = "[0-9]{1,}_(([1-9]\\d*\\.?\\d*)|(0\\.\\d*[1-9]))";//(subway(\\d+" + "|(\\d+_\\d+)))/";
+        String subwayLine = RegexUtil.find(regex, seoPath);
+        // 处理来源
+        String agent = RegexUtil.find(regex, seoPath);
+        System.out.println(agent);
+        return agent;
     }
 
     private Map<String, String> revoseSeoPath(String seoPath){
