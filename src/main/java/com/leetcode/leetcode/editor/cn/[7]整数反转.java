@@ -41,7 +41,7 @@ package com.leetcode.leetcode.editor.cn;
  */
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution7 {
     public int reverse2(int x) {
         if (0 == x) {
             return 0;

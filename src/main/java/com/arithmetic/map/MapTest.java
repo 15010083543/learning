@@ -1,8 +1,9 @@
 package com.arithmetic.map;
 
-import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @Author: liupeng
@@ -12,9 +13,13 @@ import java.util.Map;
 public class MapTest {
 
     public static void main(String[] args) {
-        Map<String, String> map = new HashMap<>();
+        Map<String, String> map = new LinkedHashMap<>();
+        map = new ConcurrentHashMap<>();
         map.put(null, null);
         map.put("1", "2");
+        map.put("22", "2");
+        map.put("12", "3");
+        map.put("11", "4");
         map.forEach((key, value) -> System.out.println(key+":"+value));
 
         Map<String, String> hashtable = new Hashtable<>();
