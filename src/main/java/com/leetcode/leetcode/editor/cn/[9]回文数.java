@@ -29,8 +29,27 @@ package com.leetcode.leetcode.editor.cn;
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution9 {
+
     public boolean isPalindrome(int x) {
+        // 小于0或是尾数为0时，不是回文数
+        if (x < 0 || (x % 10 == 0 && x != 0)) {
+            return false;
+        }
+        int reviceNum = 0;
+        while (x > reviceNum) {
+            reviceNum = reviceNum * 10 + x % 10;
+            x /= 10;
+        }
+        return x == reviceNum || x == reviceNum / 10;
+    }
+
+
+   /*public static void main(String[] args) {
+      // System.out.println(isPalindrome(121));
+    }*/
+
+    public boolean isPalindromeMy(int x) {
         if (x < 0) {
             return false;
         }
@@ -46,8 +65,6 @@ class Solution {
         return true;
     }
 
-  /* public static void main(String[] args) {
-        System.out.println(isPalindrome(12321));
-    }*/
+
 }
 //leetcode submit region end(Prohibit modification and deletion)
