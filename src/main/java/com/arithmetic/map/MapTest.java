@@ -1,7 +1,7 @@
 package com.arithmetic.map;
 
+import java.util.HashMap;
 import java.util.Hashtable;
-import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class MapTest {
 
     public static void main(String[] args) {
-        Map<String, String> map = new LinkedHashMap<>();
+        Map<String, String> map = new HashMap<>();
         map = new ConcurrentHashMap<>();
         map.put(null, null);
         map.put("1", "2");
