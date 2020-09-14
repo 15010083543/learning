@@ -56,7 +56,7 @@ package com.leetcode.leetcode.editor.cn;
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution13 {
     public static int romanToInt(String s) {
         if (null == s || "".equals(s))  {
             return 0;
