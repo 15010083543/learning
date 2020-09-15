@@ -54,7 +54,7 @@ package com.leetcode.leetcode.editor.cn;
  *     }
  * }
  */
-class Solution {
+class Solution141 {
     // 快慢指针
     public boolean hasCycle(ListNode head) {
 
