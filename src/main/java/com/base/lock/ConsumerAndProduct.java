@@ -43,7 +43,7 @@ public class ConsumerAndProduct {
         @Override
         public void run() {
             synchronized (consumerAndProduct) {
-                if (falg) {
+                while (falg) {
                     try {
                         this.wait();
                     } catch (InterruptedException e) {
@@ -67,7 +67,7 @@ public class ConsumerAndProduct {
         @Override
         public void run() {
             synchronized (consumerAndProduct) {
-                if (!falg) {
+                while (!falg) {
                     try {
                         this.wait();
                     } catch (InterruptedException e) {

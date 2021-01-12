@@ -8,9 +8,9 @@ package com.arithmetic.recursive;
 public class BinarySearch {
 
     public static void main(String[] args) {
-        int[] array = new int[]{1, 2, 4};
-        System.out.println("recursive"+binaryRecursive(array, 4, 0, array.length - 1));
-        System.out.println(binaryFor(array, 4));
+        int[] array = new int[]{0, 1, 2, 4, 5, 6, 7, 9};
+        System.out.println("recursive"+binaryRecursive(array, 8, 0, array.length - 1));
+        System.out.println(binaryFor(array, 7));
     }
 
     public static int binaryFor(int[] array, int search){
@@ -40,9 +40,9 @@ public class BinarySearch {
             return -1;
         } else {
             if (search < array[cur]) {
-                return binaryRecursive(array, search, low, up-1);
+                return binaryRecursive(array, search, low, cur-1);
             } else {
-                return binaryRecursive(array, search, low + 1, up);
+                return binaryRecursive(array, search, cur + 1, up);
             }
         }
     }

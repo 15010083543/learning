@@ -48,11 +48,6 @@ class Solution70 {
         return climbStairs(n-1) + climbStairs(n-2);
     }
 
-    public static void main(String[] args) {
-        //System.out.println(age(27));
-        System.out.println(sum(5));
-    }
-
     public static int sum(int n){
         if (n ==1 || n ==2) {
             return n;

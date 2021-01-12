@@ -12,5 +12,12 @@ public class LockTest {
     public static void main(String[] args) {
         ReentrantLock reentrantLock = new ReentrantLock();
         reentrantLock.lock();
+        try {
+
+        } catch (Exception e) {
+
+        }finally {
+            reentrantLock.unlock();
+        }
     }
 }

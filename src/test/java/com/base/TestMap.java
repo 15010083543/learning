@@ -2,7 +2,10 @@ package com.base;
 
 import org.junit.Test;
 
-import java.util.*;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author LiuPeng
@@ -13,10 +16,19 @@ public class TestMap {
 
     @Test
     public void Test(){
+
+        String htt ="http://111";
+        int index = htt.indexOf("://");
+        int index2 = htt.indexOf("aa://");
+
+        htt = htt.replace("http://", "https://");
+        System.out.println(htt);
+
         Calendar c = Calendar.getInstance();
         System.out.println(c.get(Calendar.SECOND));
-        System.out.println(new Date().getSeconds());
-        Map<Integer, String> map = new Hashtable<>();//new HashMap<>(10);
+        System.out.println(new Date());
+        Map<Integer, String> map = new ConcurrentHashMap<>();//new HashMap<>(10);
+        map.get("2");
         map.put(7, "2");
         map.put(11, "3");
         map.put(43, "1");
