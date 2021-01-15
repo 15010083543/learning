@@ -16,9 +16,9 @@ package com.leetcode.leetcode.editor.cn;
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution53 {
     public static void main(String[] args) {
-        System.out.println(maxSubArray(new int[]{-7, 8, 1, -2, -4, 10}));
+        System.out.println(maxSubArray(new int[]{-7, 8, 3, -2, -4, -7, 10}));
     }
     public static int maxSubArray(int[] nums) {
         int pre = 0, maxAns = nums[0];
