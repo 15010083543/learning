@@ -43,6 +43,7 @@ package com.leetcode.leetcode.editor.cn;
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
+
 /**
  * Definition for singly-linked list.
  * class ListNode {
@@ -57,8 +58,31 @@ package com.leetcode.leetcode.editor.cn;
 class Solution141 {
     // 快慢指针
     public boolean hasCycle(ListNode head) {
-
+        if (null == head.next || head == null) {
+            return false;
+        }
+        ListNode slow = head;
+        ListNode fast = head.next;
+        while (null != slow && null != fast) {
+            if (slow.val == fast.val) {
+                return true;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+        }
         return false;
+    }
+
+    public static void main(String[] args) {
+        ListNode l1 = new ListNode(1);
+        ListNode l2 = new ListNode(2);
+        ListNode l3 = new ListNode(3);
+
+        l1.next = l2;
+        l2.next = l3;
+        l3.next = l1;
+        Solution141 solution141 = new Solution141();
+        solution141.hasCycle(l1);
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
