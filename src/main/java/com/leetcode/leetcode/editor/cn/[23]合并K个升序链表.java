@@ -71,6 +71,7 @@ class Solution23 {
         if (l == r) {
             return lists[l];
         }
+        // 核心代码
         int mid = l + (r + l) >> 2;
         ListNode first = mergeList(lists, l, mid);
         ListNode two = mergeList(lists, mid+1, r);
