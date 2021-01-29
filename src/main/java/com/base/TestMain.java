@@ -14,6 +14,13 @@ public class TestMain {
 
         System.gc();
 
+        int i = 3;
+        System.out.println(i++); // 3
+        System.out.println(i); //4
+        System.out.println(i++ + 1); // 5先运算再取i新值
+        System.out.println(++i);// 6
+        System.out.println(++i + 1); // 8先取i新值再运算
+
     }
 
 }
