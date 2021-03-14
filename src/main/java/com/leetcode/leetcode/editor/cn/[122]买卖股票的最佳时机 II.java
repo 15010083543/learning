@@ -45,7 +45,11 @@ package com.leetcode.leetcode.editor.cn;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution122 {
     public int maxProfit(int[] prices) {
-        return 0;
+        int num = 0;
+        for (int i = 1; i < prices.length; i++) {
+            num += Math.max(0, prices[i] - prices[i-1]);
+        }
+        return num;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -16,12 +16,24 @@ import java.util.Arrays;
 public class QuickSort {
 
     public static void main(String[] args) {
-        Integer[] arr = {9,10,11,12,1,6,7,3,4,2};
+        Integer[] arr = {5,6,7,3,4,2};
         Arrays.asList(arr).stream().forEach(i -> System.out.print(i));
         System.out.println();
         quickSort(arr, 0, arr.length - 1);
         Arrays.asList(arr).stream().forEach(i -> System.out.println(i));
     }
+
+    private static void quickSort2(Integer[] arr, int l, int r) {
+        if (l >= r) {
+            return;
+        }
+        //int num = getPartion2(arr, l, r);
+    }
+
+   /* private static int getPartion2(Integer[] arr, int l, int r) {
+        int
+    }*/
+
 
     private static void quickSort(Integer[] arr, int i, int h) {
         if (i >= h) {
@@ -30,9 +42,9 @@ public class QuickSort {
         int partion = getPartion(arr, i, h);// 找到元素的固定位置，然后再把两边的子数组重新排序
         System.out.println("partion=="+partion);
         Arrays.asList(arr).stream().forEach(x -> System.out.print(x));
-        System.out.println();
         quickSort(arr, i, partion - 1); // 小于partion左边的数组进行排序
         quickSort(arr, partion + 1, h);// 大于partion左边的数组进行排序
+
     }
 
     private static int getPartion(Integer[] arr, int l, int r) {

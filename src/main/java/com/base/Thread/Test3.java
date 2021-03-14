@@ -15,8 +15,8 @@ public class Test3 {
         Test3 test3 = new Test3();
         new Thread(test3.new Producer()).start();
         new Thread(test3.new Consumer()).start();
-        new Thread(test3.new Producer()).start();
         new Thread(test3.new Consumer()).start();
+        new Thread(test3.new Producer()).start();
         new Thread(test3.new Producer()).start();
         new Thread(test3.new Consumer()).start();
         new Thread(test3.new Producer()).start();
@@ -26,11 +26,11 @@ public class Test3 {
         @Override
         public void run() {
             for (int i = 0; i < 10; i++) {
-                try {
+                /*try {
                     Thread.sleep(3000);
                 } catch (Exception e) {
                     e.printStackTrace();
-                }
+                }*/
                 try {
                     blockingQueue.put(1);
                     count++;
@@ -46,11 +46,11 @@ public class Test3 {
         @Override
         public void run() {
             for (int i = 0; i < 10; i++) {
-                try {
+                /*try {
                     Thread.sleep(3000);
                 } catch (InterruptedException e1) {
                     e1.printStackTrace();
-                }
+                }*/
                 try {
                     blockingQueue.take();
                     count--;

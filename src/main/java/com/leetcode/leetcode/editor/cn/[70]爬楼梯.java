@@ -29,18 +29,6 @@ package com.leetcode.leetcode.editor.cn;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution70 {
     public int climbStairs(int n) {
-        // 循环
-        /*if (n ==1 || n ==2) return n;
-        int tmp = 1;
-        int next = 2;
-        for (int i = 2; i < n; i++) {
-            // 第二个值替换
-            int t = next;
-            // 第三个值
-            next = tmp + next;
-            tmp = t;
-        }
-        return next;*/
         // 递归
         if (n ==1 || n == 2) {
             return n;
@@ -58,6 +46,25 @@ class Solution70 {
             int sum = tmp + next;
             tmp = next;
             next = sum;
+        }
+        return next;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(lou(5));
+    }
+
+    public static int lou(int n) {
+        // 循环
+        if (n ==1 || n ==2) return n;
+        int tmp = 1;
+        int next = 2;
+        for (int i = 2; i < n; i++) {
+            // 第二个值替换
+            int t = next;
+            // 第三个值
+            next = tmp + next;
+            tmp = t;
         }
         return next;
     }

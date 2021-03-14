@@ -24,7 +24,7 @@ public class ConsumerAndProduct {
                 }
             }, new ThreadPoolExecutor.CallerRunsPolicy());
     static boolean falg = false;
-    static int cur = 1;
+    static int cur = 0;
 
     public static void main(String[] args) {
         ConsumerAndProduct consumerAndProduct = new ConsumerAndProduct();

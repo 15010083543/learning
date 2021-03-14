@@ -16,19 +16,30 @@ package com.leetcode.leetcode.editor.cn;
 // 👍 8597 👎 0
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution1 {
     public int[] twoSum(int[] nums, int target) {
-        int[] sum = new int[2];
+        /* 第一种方案
         for (int i = 0; i < nums.length - 1; i++) {
             for (int j = i+1; j < nums.length; j++) {
                 if (target == nums[i] + nums[j] ){
-                    sum[0] = i;
-                    sum[1] = j;
+                    return new int[]{i, j};
                 }
             }
         }
-        return sum;
+        return null;*/
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length - 1; i++) {
+            int num = nums[i];
+            if (map.containsKey(map.get(target - num))) {
+                return new int[]{i, map.get(target - num)};
+            }
+            map.put(num, i);
+        }
+        return null;
     }
 
 }

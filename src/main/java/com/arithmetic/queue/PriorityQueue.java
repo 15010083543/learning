@@ -1,4 +1,7 @@
-package com.arithmetic;
+package com.arithmetic.queue;
+
+import java.util.Queue;
+
 /**
  * @author LiuPeng
  * @description 优先级队列(相当于排序)
@@ -39,5 +42,13 @@ public class PriorityQueue {
 
         queue.insert(15);
         System.out.println("-----");
+
+        Queue fastQueue = new java.util.PriorityQueue<Integer>();
+        fastQueue.add(4);
+        fastQueue.add(5);
+        fastQueue.add(3);
+        while (!fastQueue.isEmpty()) {
+            System.out.println(fastQueue.poll());
+        }
     }
 }
