@@ -71,6 +71,7 @@ package com.leetcode.leetcode.editor.cn;
 class Solution38 {
     public String countAndSay(int n) {
 
+
         return "";
     }
 }

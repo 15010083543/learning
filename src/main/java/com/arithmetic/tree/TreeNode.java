@@ -55,13 +55,26 @@ public class TreeNode {
     }
 
     // 中序遍历
-    public void midCircle(TreeNode treeNode){
+    public static void midCircle(TreeNode treeNode){
+        if (null != treeNode.leftNode) {
+            frontCircle(treeNode.leftNode);
+        }
+        System.out.println(treeNode.value);
+        if (null != treeNode.rightNode) {
+            frontCircle(treeNode.rightNode);
+        }
 
     }
 
     // 后序遍历
-    public void lastCircle(TreeNode treeNode){
-
+    public static void lastCircle(TreeNode treeNode){
+        if (null != treeNode.leftNode) {
+            frontCircle(treeNode.leftNode);
+        }
+        if (null != treeNode.rightNode) {
+            frontCircle(treeNode.rightNode);
+        }
+        System.out.println(treeNode.value);
     }
 
     // 前序查找

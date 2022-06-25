@@ -13,6 +13,10 @@ package com.leetcode.leetcode.editor.cn;
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -25,6 +29,7 @@ package com.leetcode.leetcode.editor.cn;
  */
 class Solution206 {
     public ListNode reverseList(ListNode head) {
+
         ListNode prev = null;
         ListNode curr = head;
         while (curr != null) {

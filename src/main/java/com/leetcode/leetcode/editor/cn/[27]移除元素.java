@@ -53,7 +53,6 @@ package com.leetcode.leetcode.editor.cn;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution27 {
     public int removeElement(int[] nums, int val) {
-        int num = 0;
         int j = 0;
         for (int i = 0; i < nums.length; i++) {
             if (val != nums[i]) {
