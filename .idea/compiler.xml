@@ -9,7 +9,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="arithmetic" />
         <module name="learing" />
+        <module name="learning" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="learning" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
